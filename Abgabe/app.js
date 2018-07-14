@@ -9,10 +9,7 @@ const  mongoose = require('mongoose');
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/order');
 
-mongoose.connect('mongodb://dustin_barth:'+process.env.MONGO_ATLAS_PW +'@cluster0-shard-00-00-ovlat.mongodb.net:27017,cluster0-shard-00-01-ovlat.mongodb.net:27017,cluster0-shard-00-02-ovlat.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true',
-    {
-    useMongoClient: true
-});
+mongoose.connect('mongodb://dustin_barth:test123@cluster0-ovlat.mongodb.net/test?retryWrites=true');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
